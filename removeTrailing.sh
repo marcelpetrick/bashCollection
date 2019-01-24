@@ -8,3 +8,5 @@ sed -i 's/[ \t]*$//' "$1"
 
 echo replace tabs with four spaces
 sed -i 's/\t/    /g' "$1"
+
+unix2dos "$1"
