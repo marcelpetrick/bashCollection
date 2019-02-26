@@ -15,3 +15,6 @@ unix2dos "$1"
 # works, but results in added newlines at the endOfFile
 #awk 'BEGIN{RS="\n\n\n" ; ORS="\n\n";}{ print }' "$1" > "$1foobar"
 #mv "$1foobar" "$1"
+
+# todo new comment
+run="$(cat "$1" | python /c/Repos/squashMultipleWhitespace.py > "$1foobar" && mv "$1foobar" "$1")"
