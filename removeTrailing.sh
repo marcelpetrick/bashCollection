@@ -10,3 +10,8 @@ echo replace tabs with four spaces
 sed -i 's/\t/    /g' "$1"
 
 unix2dos "$1"
+
+# merge all double newlines into a single one
+# works, but results in added newlines at the endOfFile
+#awk 'BEGIN{RS="\n\n\n" ; ORS="\n\n";}{ print }' "$1" > "$1foobar"
+#mv "$1foobar" "$1"
