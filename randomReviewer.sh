@@ -10,7 +10,7 @@
 # initialize the array
 array=(HGA GSC NKU MPE NLE RNI MDR)
 
-echo "------------------"
+echo "--------------------------------"
 
 ######################################################################
 # remove myself from the potential reviewers based on the login name #
@@ -18,27 +18,30 @@ echo "------------------"
 loginname=$(whoami)
 # convert to uppercase
 loginname=$(echo "${loginname^^}")
-echo "you are: $loginname - this should correspond to the three-character-alias"
-echo "------------------"
+#echo "you are: $loginname - this should correspond to the three-character-alias"
+#echo "--------------------------------"
 
 # copy everything from "array" to "reviewers" without myself
 reviewers=()
-for i in "${array[@]}"
+for elem in "${array[@]}"
 do
-    echo $i
-    reviewers+=($i)
+    #echo "elem of array: $elem"
+    if [ "$elem" != "$loginname" ]; then
+        #echo "\tnot my name -> add"
+        reviewers+=($elem)
+    #else
+        #echo "\t don't add!"
+    fi
 done
 
 # end
 
-echo "------------------"
-
 #echo "--------------------------------"
-printf '%s\n' "${reviewers[@]}"
+#printf '%s\n' "${reviewers[@]}"
 
-# randomly pick a reviewer
-size=${#array[@]}
+###################################################
+# randomly pick a reviewer from the filtered list #
+###################################################
+size=${#reviewers[@]}
 index=$(($RANDOM % $size))
-echo "Mister ${array[$index]} is your candidate as reviewer. Congratulations!"
-
-# todo: externals can just select internals
+echo "Mister ${reviewers[$index]} is your candidate as reviewer. Congratulations!"
