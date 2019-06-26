@@ -8,14 +8,14 @@
 # license:	GNU General Public License v3.0
 
 # initialize the array
-array=(MSA MBH HGA GSC MPE NLE RNI MLA)
+array=(HGA GSC NKU MPE NLE RNI MDR)
 
 # remove myself based on the login name
 loginname=$(whoami)
 #echo "you are: $loginname"
 # convert to uppercase
 loginname=$(echo "${loginname^^}")
-#echo "you are: $loginname"
+echo "you are: $loginname"
 # put into array
 todelete=($loginname)
 #echo "you are: $todelete"
