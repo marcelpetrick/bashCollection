@@ -10,28 +10,31 @@
 # initialize the array
 array=(HGA GSC NKU MPE NLE RNI MDR)
 
-# remove myself based on the login name
+echo "------------------"
+
+######################################################################
+# remove myself from the potential reviewers based on the login name #
+######################################################################
 loginname=$(whoami)
-#echo "you are: $loginname"
 # convert to uppercase
 loginname=$(echo "${loginname^^}")
-echo "you are: $loginname"
-# put into array
-todelete=($loginname)
-#echo "you are: $todelete"
-#printf '%s\n' "${array[@]}"
+echo "you are: $loginname - this should correspond to the three-character-alias"
+echo "------------------"
 
-# remove everything inside todelete
-for target in "${todelete[@]}"; do
-  for i in "${!array[@]}"; do
-    if [[ ${array[i]} = "${todelete[0]}" ]]; then
-      unset 'array[i]'
-    fi
-  done
+# copy everything from "array" to "reviewers" without myself
+reviewers=()
+for i in "${array[@]}"
+do
+    echo $i
+    reviewers+=($i)
 done
 
+# end
+
+echo "------------------"
+
 #echo "--------------------------------"
-#printf '%s\n' "${array[@]}"
+printf '%s\n' "${reviewers[@]}"
 
 # randomly pick a reviewer
 size=${#array[@]}
