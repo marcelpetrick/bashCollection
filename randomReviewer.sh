@@ -4,13 +4,14 @@
 #
 # about:	randomReviewer: solves the problem that (most of the times) nobody volunteers
 #			to make a code-review. Simply picks from an array of predefined identifiers.
+#			Removes your own login-name from that array.
 #
 # license:	GNU General Public License v3.0
 
 # initialize the array
-array=(HGA GSC NKU MPE RNI MDR)
+array=(HGA GSC NKU MPE RNI MDR KWL DAD)
 
-echo "--------------------------------"
+echo "---------------------------------------------------"
 
 ######################################################################
 # remove myself from the potential reviewers based on the login name #
@@ -44,4 +45,4 @@ done
 ###################################################
 size=${#reviewers[@]}
 index=$(($RANDOM % $size))
-echo "Mister ${reviewers[$index]} is your candidate as reviewer. Congratulations!"
+echo "${reviewers[$index]} is your candidate as reviewer. Congratulations!"
