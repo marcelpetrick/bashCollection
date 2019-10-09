@@ -9,7 +9,7 @@
 # license:	GNU General Public License v3.0
 
 # initialize the array
-array=(HGA GSC NKU MPE RNI MDR KWL DAD RSH)
+array=(HGA GSC NKU MPE MDR KWL DAD RSH JLU)
 
 echo "---------------------------------------------------"
 
