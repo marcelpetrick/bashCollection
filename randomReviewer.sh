@@ -9,7 +9,7 @@
 # license:	GNU General Public License v3.0
 
 # initialize the array
-array=(HGA GSC NKU MPE MDR KWL DAD RSH JLU GSH)
+array=(HGA NKU MPE MDR KWL DAD RSH JLU)
 
 echo "---------------------------------------------------"
 
@@ -22,7 +22,7 @@ loginname=$(echo "${loginname^^}")
 #echo "you are: $loginname - this should correspond to the three-character-alias"
 #echo "--------------------------------"
 
-# copy everything from "array" to "reviewers" without myself
+# copy everything from "array" to "reviewers" except myself
 reviewers=()
 for elem in "${array[@]}"
 do
