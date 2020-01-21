@@ -2,14 +2,15 @@
 
 # author:	Marcel Petrick (mail@marcelpetrick.it)
 #
-# about:	randomReviewer: solves the problem that (most of the times) nobody volunteers
-#			to make a code-review. Simply picks from an array of predefined identifiers.
+# about:	randomReviewer: solves the problem that (most of the time) nobody volunteers
+#			to do a code-review.
+#			Simply picks from an array of predefined identifiers.
 #			Removes your own login-name from that array.
 #
 # license:	GNU General Public License v3.0
 
-# initialize the array
-array=(HGA NKU MPE MDR KWL DAD RSH JLU)
+# initialize the array with all potential reviewers
+array=(DAD GSH HGA KWL MDR MPE NKU JLU RMA RSH)
 
 echo "---------------------------------------------------"
 
