@@ -10,7 +10,7 @@
 # license:	GNU General Public License v3.0
 
 # initialize the array with all potential reviewers
-array=(DAD GSH HGA KWL MDR MPE NKU RMA RSH BUN VGA)
+array=(DAD GSH HGA KWL MDR MPE NKU AVI RSH_ext BUN_ext VGA_ext)
 
 echo "---------------------------------------------------"
 
